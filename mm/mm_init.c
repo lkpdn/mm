@@ -2672,6 +2672,7 @@ void __init mm_core_init(void)
 	stack_depot_early_init();
 	mem_init();
 	kmem_cache_init();
+	maple_tree_init(); /* To-Do: split mm_core_init()? */
 	/*
 	 * page_owner must be initialized after buddy is ready, and also after
 	 * slab is ready so that stack_depot_init() works properly

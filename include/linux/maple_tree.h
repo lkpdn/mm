@@ -257,6 +257,7 @@ struct maple_tree {
 	struct maple_tree name = MTREE_INIT(name, 0)
 
 #define mtree_lock(mt)		spin_lock((&(mt)->ma_lock))
+#define mtree_trylock(mt)	spin_trylock((&(mt)->ma_lock))
 #define mtree_lock_nested(mas, subclass) \
 		spin_lock_nested((&(mt)->ma_lock), subclass)
 #define mtree_unlock(mt)	spin_unlock((&(mt)->ma_lock))
